@@ -1,9 +1,9 @@
 <?php
 class DataBase{
     public $db;   // handle of the db connexion
-    private static $dns = "mysql:host=localhost;dbname=[nombreDB]";
-    private static $user = "root";
-    private static $pass = "";
+    private static $dns = "mysql:host=192.168.0.206;dbname=historias-clinicas";
+    private static $user = "alumno";
+    private static $pass = "alumno";
     private static $instance;
 
     public function __construct ()
