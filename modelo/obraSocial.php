@@ -1,7 +1,9 @@
 <?php
 class ObraSocial
 {
-
+    public $Id;
+    public $Descripcion;
+    public $Eliminado;
     public static function BuscarTodas()
     {
         $con  = Database::getInstance();
@@ -35,9 +37,9 @@ class ObraSocial
     public function Agregar()
     {
         $con  = Database::getInstance();
-        $sql = "insert into [tablaAReemplazar] ([propiedad1],[propiedad2]) values (:p1,:p2)";
+        $sql = "insert into obrasocial (Descripcion) values (:p1)";
         $claseAReemplazar = $con->db->prepare($sql);
-        $params = array("p1" => $this->propiedad1, "p2" => $this->propiedad2);
+        $params = array("p1" => $this->Descripcion);
         $claseAReemplazar->execute($params);
     }
 

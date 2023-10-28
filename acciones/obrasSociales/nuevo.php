@@ -2,6 +2,8 @@
 
 require_once '../obrasSociales/request/nuevoRequest.php';
 require_once '../obrasSociales/responses/nuevoResponse.php';
+require_once '../../modelo/obraSocial.php';
+require_once '../../configuracion/database.php';
 
 header('Content-Type: application/json');
 
@@ -18,5 +20,11 @@ else {
     $resp->IsOk=true;
     $resp->Mensaje='';
 }
+
+$os= new ObraSocial();
+
+$os->Descripcion=$req->Descripcion;
+
+$os->Agregar();
 
 echo json_encode($resp);
