@@ -5,10 +5,10 @@ class ObraSocial
     public static function BuscarTodas()
     {
         $con  = Database::getInstance();
-        $sql = "select * from [tablaAReemplazar]";
+        $sql = "select * from obrasocial";
         $queryClaseAReemplazar = $con->db->prepare($sql);
         $queryClaseAReemplazar->execute();
-        $queryClaseAReemplazar->setFetchMode(PDO::FETCH_CLASS, '[ClaseAReemplazar]');
+        $queryClaseAReemplazar->setFetchMode(PDO::FETCH_CLASS, 'ObraSocial');
 
         $claseAReemplazarADevolver = array();
 
