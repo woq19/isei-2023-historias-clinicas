@@ -1,9 +1,10 @@
 <?php
 class ObraSocial
-{
+{    
     public $Id;
     public $Descripcion;
     public $Eliminado;
+
     public static function BuscarTodas()
     {
         $con  = Database::getInstance();
@@ -59,7 +60,7 @@ class ObraSocial
     public function Eliminar()
     {
         $con = Database::getInstance();
-        $sql = "DELETE FROM [tablaAReemplazar] WHERE Id = :p1";
+        $sql = "UPDATE obrasocial SET Eliminado=1 WHERE Id = :p1";
         $claseAReemplazar = $con->db->prepare($sql);
         $params = array("p1" => $this->Id);
         $claseAReemplazar->execute($params);
