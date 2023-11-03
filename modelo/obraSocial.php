@@ -25,11 +25,11 @@ class ObraSocial
     public static function Buscar($id)
     {
         $con  = Database::getInstance();
-        $sql = "select * from [tablaAReemplazar] where Id = :p1";
+        $sql = "select * from obrasocial where Id = :p1";
         $queryClaseAReemplazar = $con->db->prepare($sql);
         $params = array("p1" => $id);
         $queryClaseAReemplazar->execute($params);
-        $queryClaseAReemplazar->setFetchMode(PDO::FETCH_CLASS, '[ClaseAReemplazar]');
+        $queryClaseAReemplazar->setFetchMode(PDO::FETCH_CLASS, 'ObraSocial');
         foreach ($queryClaseAReemplazar as $m) {
             return $m;
         }
