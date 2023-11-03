@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<?php 
-
-class TipoEvento 
-{
-    public $Eliminado=true ;
-}
-=======
 <?php
 
 require_once 'request/eliminarrequest.php';
@@ -33,4 +25,3 @@ $response->Mensaje []= "";
 
 
 echo json_encode($response);
->>>>>>> main
