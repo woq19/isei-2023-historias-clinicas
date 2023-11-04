@@ -8,7 +8,7 @@ header('Content-Type: application/json');
 $resp= new responseConsultarActivas();
 
 
-$resp->ListObrasSociales = ObraSocial::BuscarTodas();
+$resp->ListObrasSociales = ObraSocial::BuscarTodasActivas();
 
 echo json_encode($resp);
 
