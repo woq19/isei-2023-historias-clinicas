@@ -4,7 +4,7 @@ require_once 'response/NuevoResponse.php';
 require_once 'request/NuevoRequest.php';
 require_once '../../modelo/Paciente.php';
 require_once '../../configuracion/database.php';
-
+require_once '../../modelo/ObraSocial.php';
 
 header('Content-Type: application/json');
 
@@ -17,18 +17,18 @@ $json = file_get_contents('php://input',true);
 $request = json_decode($json);
 
 $Pa= new Paciente();
-$Pa->Id= $request->Id;
 $Pa->Nombre= $request->Nombre;
 $Pa->Apellido= $request->Apellido;
 $Pa->Dni= $request->Dni;
 $Pa->Email= $request->Email;
 $Pa->GrupoSanguineo= $request->GrupoSanguineo;
-$Pa->ObraSocial= $request->ObraSocial;
+$Pa->ObraSocial= $request->ObraSocialId;
 
-if($request->$ObraSocialId==null){
+$ObraSocialDb=ObraSocial::Buscar($request->ObraSocialId);
+if($request->$ObraSocialDb==null){
     $response->isOK=true;
     $response->Mensaje []= "";
-    
+
 }
 else{
     $response->isOK=false;
