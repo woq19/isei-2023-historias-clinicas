@@ -1,48 +1,14 @@
 <?php
-class Paciente
-{  
-        public $Id;	
-        public $Nombre;		
-        public $Apellido;	
-        public $Dni;	
-        public $Email;	
-        public $Clave;	
-        public $GrupoSanguineo;	
-        public $ObraSocialId;
 
-    public static function BuscarTodasActivas()
-    {
-        $con  = Database::getInstance();
-        $sql = "select * from obrasocial where Eliminado = 0";
-        $queryClaseAReemplazar = $con->db->prepare($sql);
-        $queryClaseAReemplazar->execute();
-        $queryClaseAReemplazar->setFetchMode(PDO::FETCH_CLASS, 'ObraSocial');
-
-        $claseAReemplazarADevolver = array();
-
-        foreach ($queryClaseAReemplazar as $m) {
-            $claseAReemplazarADevolver[] = $m;
-        }
-
-        return $claseAReemplazarADevolver;
-    }
-
-    public static function BuscarTodas()
-    {
-        $con  = Database::getInstance();
-        $sql = "select * from obrasocial";
-        $queryClaseAReemplazar = $con->db->prepare($sql);
-        $queryClaseAReemplazar->execute();
-        $queryClaseAReemplazar->setFetchMode(PDO::FETCH_CLASS, 'ObraSocial');
-
-        $claseAReemplazarADevolver = array();
-
-        foreach ($queryClaseAReemplazar as $m) {
-            $claseAReemplazarADevolver[] = $m;
-        }
-
-        return $claseAReemplazarADevolver;
-    }
+class Paciente{
+    public $Id;
+    public $Nombre;
+    public $Apellido;
+    public $Dni;
+    public $Email;
+    public $Clave;
+    public $GrupoSanguineo;
+    public $ObraSocialId;
 
     public static function Buscar($id)
     {
@@ -57,34 +23,21 @@ class Paciente
         }
     }
 
-    public function Agregar()
+    public static function BuscarTodos()
     {
         $con  = Database::getInstance();
-        $sql = "insert into obrasocial (Descripcion) values (:p1)";
-        $claseAReemplazar = $con->db->prepare($sql);
-        $params = array("p1" => $this->Descripcion);
-        $claseAReemplazar->execute($params);
-    }
+        $sql = "select * from paciente";
+        $queryClaseAReemplazar = $con->db->prepare($sql);
+        $queryClaseAReemplazar->execute();
+        $queryClaseAReemplazar->setFetchMode(PDO::FETCH_CLASS, 'Paciente');
 
-    public function Modificar()
-    {
-        $con = Database::getInstance();
-        $sql = "UPDATE [tablaAReemplazar]
-                    SET
-                    [propiedad1] = :p1,
-                    [propiedad2] = :p2
-                    WHERE Id = :p3";
-        $claseAReemplazar = $con->db->prepare($sql);
-        $params = array("p1" => $this->propiedad1, "p2" => $this->propiedad2, "p3" => $this->Id);
-        $claseAReemplazar->execute($params);
-    }
+        $claseAReemplazarADevolver = array();
 
-    public function Eliminar()
-    {
-        $con = Database::getInstance();
-        $sql = "UPDATE obrasocial SET Eliminado=1 WHERE Id = :p1";
-        $claseAReemplazar = $con->db->prepare($sql);
-        $params = array("p1" => $this->Id);
-        $claseAReemplazar->execute($params);
+        foreach ($queryClaseAReemplazar as $m) {
+            $claseAReemplazarADevolver[] = $m;                
+        }
+
+        return $claseAReemplazarADevolver;
+        
     }
 }
