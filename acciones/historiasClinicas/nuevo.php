@@ -25,9 +25,9 @@ $ehc->TipoEventoId=$req->TipoEventoId;
 $resp->IsOk=true;
 $resp->Mensaje[]=" ";
 
+$pacienteDB = Paciente::Buscar($req->PacienteId);
 
-
-if ($req->PacienteId==null){
+if ($pacienteDB==null){
     $resp->IsOk=false;
     $resp->Mensaje []='El paciente no existe';
 } else {}
