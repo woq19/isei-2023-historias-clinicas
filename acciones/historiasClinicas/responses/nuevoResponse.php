@@ -1,6 +1,6 @@
 <?php
 
-class NuevoRequest{
+class NuevoResponse{
     public $IsOk;
     public $Mensaje=array();
 }
