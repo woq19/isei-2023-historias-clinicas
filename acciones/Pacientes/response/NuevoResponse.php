@@ -1,5 +1,5 @@
 <?php
-class AgregarResponse{
+class NuevoResponse{
 
 public $isOK;
 public $Mensaje;
