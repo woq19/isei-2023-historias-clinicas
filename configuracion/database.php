@@ -1,14 +1,15 @@
 <?php
-class DataBase{
-    public $db;   // handle of the db connexion
+class DataBase
+{
+    public $db; // handle of the db connexion
     private static $dns = "mysql:host=192.168.0.206;dbname=historias-clinicas";
     private static $user = "alumno";
     private static $pass = "alumno";
     private static $instance;
 
-    public function __construct ()
+    public function __construct()
     {
-        $this->db = new PDO(self::$dns,self::$user,self::$pass);
+        $this->db = new PDO(self::$dns, self::$user, self::$pass);
         //seteo atributos para q me devuelva excepcion ante errores
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
@@ -16,11 +17,10 @@ class DataBase{
     public static function getInstance()
     {
         //si la db no esta instanciada
-        if(!isset(self::$instance))
-        {
-            $object= __CLASS__;
+        if (!isset(self::$instance)) {
+            $object = __CLASS__;
             //instancio la clase
-            self::$instance=new $object;
+            self::$instance = new $object;
         }
         //retorno la instancia de la clase
         return self::$instance;
