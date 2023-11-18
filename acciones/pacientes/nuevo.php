@@ -32,7 +32,7 @@ if($response->isOK==true){
     $pa->Dni= $request->Dni;
     $pa->Email= $request->Email;
     $pa->GrupoSanguineo= $request->GrupoSanguineo;
-    $pa->ObraSocial= $request->ObraSocialId;
+    $pa->ObraSocialId= $request->ObraSocialId;
         
     $pa->Agregar();
 }
