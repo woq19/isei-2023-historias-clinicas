@@ -2,12 +2,12 @@
 
 require_once '../../modelo/eventoHistoriaClinica.php';
 require_once '../../configuracion/database.php';
-require_once 'responses/nuevoResponse.php';
+require_once 'responses/consultarResponse.php';
 
 header('Content-Type: application/json');
-$resp = new nuevoResponse();
+$resp = new ConsultarResponse();
 
-$resp->eventoHistoriaClinica = EventoHistoriaClinica::Buscar($_GET['Id']);
+$resp->EventoHistoriaClinica = EventoHistoriaClinica::Buscar($_GET['Id']);
 
 
 echo json_encode($resp);
