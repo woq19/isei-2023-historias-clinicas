@@ -1,7 +1,7 @@
 <?php
 
-require_once 'response/EliminarResponse.php';
-require_once 'request/EliminarRequest.php';
+require_once 'responses/eliminarResponse.php';
+require_once 'request/eliminarRequest.php';
 require_once '../../modelo/tipoEventoHistoriaClinica.php';
 require_once '../../configuracion/database.php';
 

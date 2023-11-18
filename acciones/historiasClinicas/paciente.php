@@ -1,7 +1,7 @@
 <?php
 
 
-require_once '../historiasClinicas/responses/pacienteResponse.php';
+require_once 'responses/pacienteResponse.php';
 require_once '../../modelo/eventoHistoriaClinica.php';
 require_once '../../configuracion/database.php';
 

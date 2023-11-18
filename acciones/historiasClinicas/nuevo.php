@@ -1,6 +1,6 @@
 <?php
-require_once '../historiasClinicas/request/nuevoRequest.php';
-require_once '../historiasClinicas/responses/nuevoResponse.php';
+require_once 'request/nuevoRequest.php';
+require_once 'responses/nuevoResponse.php';
 require_once '../../modelo/eventoHistoriaClinica.php';
 require_once '../../modelo/paciente.php';
 require_once '../../modelo/tipoEventoHistoriaClinica.php';

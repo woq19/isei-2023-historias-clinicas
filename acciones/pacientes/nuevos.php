@@ -1,6 +1,6 @@
 <?php
 
-require_once 'response/nuevoResponse.php';
+require_once 'responses/nuevoResponse.php';
 require_once 'request/nuevoRequest.php';
 require_once '../../modelo/paciente.php';
 require_once '../../configuracion/database.php';

@@ -1,8 +1,6 @@
 <?php
 
-class ConsultarPaciente
+class ConsultarResponse
 {
     public $Paciente;
 }
-
-?>
