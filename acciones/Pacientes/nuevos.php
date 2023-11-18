@@ -2,9 +2,9 @@
 
 require_once 'response/nuevoResponse.php';
 require_once 'request/nuevoRequest.php';
-require_once '../../modelo/Paciente.php';
+require_once '../../modelo/paciente.php';
 require_once '../../configuracion/database.php';
-require_once '../../modelo/ObraSocial.php';
+require_once '../../modelo/obraSocial.php';
 
 header('Content-Type: application/json');
 
