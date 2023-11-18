@@ -27,7 +27,7 @@ if ($req->Observaciones==null){
     $resp->Mensaje []='Debe indicar una observación';
 }
 
-if ($tipoEventoDB==null || $tipoEventoDB->Eliminado==0){
+if ($tipoEventoDB==null || $tipoEventoDB->Eliminado==1){
     $resp->IsOk=false;
     $resp->Mensaje []='El tipo de evento no existe';
 }
